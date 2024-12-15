@@ -1,5 +1,5 @@
 "use client";
-import IconCloud from "@/components/ui/icon-cloud";
+import { IconCloud } from "@/components/ui/icon-cloud";
 
 const slugs = [
   "typescript",
@@ -35,9 +35,5 @@ const slugs = [
 ];
 
 export function UseIconCloud() {
-  return (
-    <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg  bg-[#1a1a1a]  px-20 pb-20 pt-8 ">
-      <IconCloud iconSlugs={slugs} />
-    </div>
-  );
+  return <IconCloud iconSlugs={slugs} />;
 }

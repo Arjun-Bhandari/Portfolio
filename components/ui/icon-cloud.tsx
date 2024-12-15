@@ -1,14 +1,24 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import {
-  Cloud,
   fetchSimpleIcons,
   ICloud,
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
+
+// Dynamically import Cloud with no SSR
+const Cloud = dynamic(() => import("react-icon-cloud").then(mod => mod.Cloud), { 
+  ssr: false,
+  loading: () => (
+    <div className="flex h-full w-full items-center justify-center">
+      <div className="h-32 w-32 animate-pulse rounded-full bg-gray-200" />
+    </div>
+  ),
+});
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -17,7 +27,9 @@ export const cloudProps: Omit<ICloud, "children"> = {
       justifyContent: "center",
       alignItems: "center",
       width: "100%",
-      paddingTop: 40,
+      height: "100%",
+      position: "relative",
+      minHeight: "280px",
     },
   },
   options: {
@@ -33,7 +45,20 @@ export const cloudProps: Omit<ICloud, "children"> = {
     outlineColour: "#0000",
     maxSpeed: 0.04,
     minSpeed: 0.02,
-    // dragControl: false,
+    radiusX: 0.65,
+    radiusY: 0.65,
+    radiusZ: 0.65,
+    stretchX: 1,
+    stretchY: 1,
+    offsetX: 0,
+    offsetY: 0,
+    padding: 10,
+    freezeActive: true,
+    freezeDecel: true,
+    shuffleTags: true,
+    centreImage: null,
+    pinchZoom: false,
+    animTiming: "Smooth",
   },
 };
 
@@ -47,12 +72,12 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
     bgHex,
     fallbackHex,
     minContrastRatio,
-    size: 42,
+    size: 36,
     aProps: {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e: React.MouseEvent) => e.preventDefault(),
     },
   });
 };
@@ -63,26 +88,29 @@ export type DynamicCloudProps = {
 
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
-export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
+export function IconCloud({ iconSlugs }: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
+  const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
 
   useEffect(() => {
+    setMounted(true);
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
   }, [iconSlugs]);
 
-  const renderedIcons = useMemo(() => {
-    if (!data) return null;
+  const renderedIcons = data
+    ? Object.values(data.simpleIcons).map((icon) =>
+        renderCustomIcon(icon, theme || "light")
+      )
+    : null;
 
-    return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"),
-    );
-  }, [data, theme]);
+  if (!mounted || !renderedIcons) return null;
 
   return (
-    // @ts-ignore
-    <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
-    </Cloud>
+    <div className="relative flex h-full w-full items-center justify-center">
+      <Cloud {...cloudProps}>
+        <>{renderedIcons}</>
+      </Cloud>
+    </div>
   );
 }

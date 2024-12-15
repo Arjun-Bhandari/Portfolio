@@ -258,14 +258,14 @@ export const SkillsGrid = () => {
   return (
     <div className="w-full space-y-4 px-4 sm:px-6 md:px-8">
       <div className="mb-4">
-        <p className="text-xl font-bold text-white">Essential Tools I used</p>
+        <p className="text-xl font-bold text-white font-mono">Essential Tools I used</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[900px] mx-auto">
         {skillsData.map((category, idx) => (
           <div
             key={category.title}
-            className="relative group w-full min-h-[164px] overflow-hidden"
+            className="relative group w-full min-h-[164px] overflow-hidden shadow-lg shadow-black/20"
           >
             {/* Base background */}
             <div className="absolute inset-0 bg-[#1a1a1a] rounded-lg"></div>
@@ -275,12 +275,12 @@ export const SkillsGrid = () => {
               <div className="w-[80%] h-full bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-shine group-hover:opacity-100 group-hover:[animation-fill-mode:forwards] group-[:not(:hover)]:animate-shineReset" />
             </div>
 
-            <div className="relative rounded-lg p-4 h-full border border-neutral-800/50">
+            <div className="relative rounded-lg p-4 h-full border border-neutral-800 bg-gradient-to-br from-neutral-900/80 via-neutral-900/40 to-neutral-800/20 backdrop-blur-sm">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-4 h-4 flex items-center justify-center">
                   {category.icon}
                 </div>
-                <h3 className="text-base font-semibold text-white">
+                <h3 className="text-base font-semibold text-white font-mono">
                   {category.title}
                 </h3>
               </div>
@@ -288,12 +288,12 @@ export const SkillsGrid = () => {
                 {category.items.map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-center gap-1.5 p-2 sm:p-1.5 rounded-lg bg-neutral-800/20 hover:bg-neutral-800/40 transition-colors"
+                    className="flex items-center gap-1.5 p-2 sm:p-1.5 rounded-lg bg-neutral-800/30 hover:bg-neutral-800/50 transition-colors backdrop-blur-sm"
                   >
                     <div className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex items-center justify-center">
                       {item.icon}
                     </div>
-                    <span className="text-[11px] sm:text-xs text-neutral-300 truncate">{item.name}</span>
+                    <span className="text-[11px] sm:text-xs text-neutral-300 truncate font-mono">{item.name}</span>
                   </div>
                 ))}
               </div>

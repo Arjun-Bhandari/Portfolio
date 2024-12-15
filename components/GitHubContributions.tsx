@@ -69,7 +69,7 @@ const GitHubContributions = ({ username }: GitHubContributionsProps) => {
   }, [username, selectedYear]);
 
   if (loading) {
-    return <div className="animate-pulse bg-neutral-800 h-48 rounded-lg"></div>;
+    return <div className="animate-pulse bg-neutral-800 h-full rounded-lg"></div>;
   }
 
   if (!contributions) {
@@ -90,13 +90,16 @@ const GitHubContributions = ({ username }: GitHubContributionsProps) => {
   );
 
   return (
-    <div className="p-4 bg-[#1a1a1a] rounded-xl border border-neutral-800 h-[190px] flex flex-col">
+    <div className="p-6 bg-[#1a1a1a] rounded-xl border border-neutral-800 h-full flex flex-col">
       <div className="flex justify-between items-center">
-        <h3 className="text-sm font-mono text-neutral-300">GitHub Contributions</h3>
+        <div className="flex flex-col gap-2">
+          <h3 className="text-xl font-mono text-neutral-200">GitHub Contributions</h3>
+          <p className="text-sm text-neutral-500">{contributions.totalContributions} contributions in {selectedYear}</p>
+        </div>
         <select
           value={selectedYear}
           onChange={(e) => setSelectedYear(Number(e.target.value))}
-          className="bg-neutral-800 text-neutral-300 rounded px-1 py-0.5 text-xs font-mono border border-neutral-700"
+          className="bg-black text-neutral-300 px-3 py-1.5 rounded-lg border border-neutral-800 text-sm font-medium hover:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-700"
         >
           {years.map((year) => (
             <option key={year} value={year}>
@@ -105,14 +108,14 @@ const GitHubContributions = ({ username }: GitHubContributionsProps) => {
           ))}
         </select>
       </div>
-      <div className="flex mt-2 flex-1 justify-center items-center overflow-hidden">
-        <div className="flex w-full h-full px-2">
+      <div className="flex-1 flex justify-center items-center h-full border-2 rounded-lg border-neutral-600">
+        <div className="grid grid-flow-col gap-[2px] auto-cols-fr w-full h-[80%] p-0.5">
           {contributions.weeks.map((week, weekIndex) => (
-            <div key={weekIndex} className="flex-1 flex flex-col h-full justify-between" style={{ gap: '2px' }}>
+            <div key={weekIndex} className="grid grid-rows-7 gap-[2px] ">
               {week.contributionDays.map((day, dayIndex) => (
                 <div
                   key={`${weekIndex}-${dayIndex}`}
-                  className={`w-[12px] h-[12px] rounded ${getContributionColor(day.contributionCount)}`}
+                  className={`w-[12px] h-[12px] rounded-sm ${getContributionColor(day.contributionCount)}`}
                   title={`${day.contributionCount} contributions on ${new Date(day.date).toLocaleDateString()}`}
                 />
               ))}
@@ -120,9 +123,6 @@ const GitHubContributions = ({ username }: GitHubContributionsProps) => {
           ))}
         </div>
       </div>
-      <p className="text-sm font-mono text-neutral-400 mt-1">
-        {contributions.totalContributions} contributions in {selectedYear}
-      </p>
     </div>
   );
 };
