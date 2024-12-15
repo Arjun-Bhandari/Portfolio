@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { LayoutGridDemo } from "@/components/UseLayoutGrid";
 
