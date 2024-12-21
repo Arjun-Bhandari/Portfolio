@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
+import { CalendarIcon, MailIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+
 
 import {
   Tooltip,
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/tooltip";
 // import { ModeToggle } from "@/components/mode-toggle";
 import { Dock, DockIcon } from "@/components/ui/dock";
-import { Separator } from "@/components/ui/separator";
+
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 

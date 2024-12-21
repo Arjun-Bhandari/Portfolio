@@ -15,7 +15,7 @@ import { SkillsGrid } from "./SkillsGrid";
 import GitHubContributions from "./GitHubContributions";
 import Image from "next/image";
 import Profile from "@/app/assests/MyProfile.jpg";
-import Link from "next/link";
+
 
 export function LayoutGridDemo() {
   return (

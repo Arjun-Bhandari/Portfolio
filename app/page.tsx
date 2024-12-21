@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {LayoutGridDemo} from "@/components/UseLayoutGrid";
 import {Experience} from "@/components/Experience";
 import {DockDemo} from "@/components/ContactForm";

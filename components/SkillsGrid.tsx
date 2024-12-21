@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { Bot, X } from "lucide-react";
 
 interface TechItem {
@@ -263,7 +262,7 @@ export const SkillsGrid = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[900px] mx-auto mt-4">
-        {skillsData.map((category, idx) => (
+        {skillsData.map((category) => (
           <div
             key={category.title}
             className="relative group w-full min-h-[164px] overflow-hidden shadow-lg shadow-black/20"
