@@ -90,16 +90,16 @@ const GitHubContributions = ({ username }: GitHubContributionsProps) => {
   );
 
   return (
-    <div className="p-6 bg-[#1a1a1a] rounded-xl border border-neutral-800 h-full flex flex-col">
-      <div className="flex justify-between items-center">
-        <div className="flex flex-col gap-2">
-          <h3 className="text-xl font-mono text-neutral-200">GitHub Contributions</h3>
-          <p className="text-sm text-neutral-500">{contributions.totalContributions} contributions in {selectedYear}</p>
+    <div className="p-4 sm:p-6 bg-[#1a1a1a] rounded-xl border border-neutral-800 h-full flex flex-col">
+      <div className="flex flex-row justify-between items-center gap-2 mb-4">
+        <div className="flex flex-col gap-1">
+          <h3 className="text-base sm:text-lg font-mono text-neutral-200">GitHub Contributions</h3>
+          <p className="text-[10px] sm:text-xs text-neutral-500">{contributions.totalContributions} contributions in {selectedYear}</p>
         </div>
         <select
           value={selectedYear}
           onChange={(e) => setSelectedYear(Number(e.target.value))}
-          className="bg-black text-neutral-300 px-3 py-1.5 rounded-lg border border-neutral-800 text-sm font-medium hover:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-700"
+          className="bg-black text-neutral-300 px-2 py-1 rounded-lg border border-neutral-800 text-xs sm:text-sm font-medium hover:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-700"
         >
           {years.map((year) => (
             <option key={year} value={year}>
@@ -108,21 +108,48 @@ const GitHubContributions = ({ username }: GitHubContributionsProps) => {
           ))}
         </select>
       </div>
-      <div className="flex-1 flex justify-center items-center h-full border-2 rounded-lg border-neutral-600">
-        <div className="grid grid-flow-col gap-[2px] auto-cols-fr w-full h-[80%] p-0.5">
-          {contributions.weeks.map((week, weekIndex) => (
-            <div key={weekIndex} className="grid grid-rows-7 gap-[2px] ">
-              {week.contributionDays.map((day, dayIndex) => (
-                <div
-                  key={`${weekIndex}-${dayIndex}`}
-                  className={`w-[12px] h-[12px] rounded-sm ${getContributionColor(day.contributionCount)}`}
-                  title={`${day.contributionCount} contributions on ${new Date(day.date).toLocaleDateString()}`}
-                />
-              ))}
-            </div>
-          ))}
+      <div className="flex-1 overflow-hidden border rounded-lg border-neutral-600 bg-[#1a1a1a]">
+        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-transparent hover:scrollbar-thumb-neutral-600">
+          <div className="grid grid-flow-col gap-[3px] auto-cols-fr min-w-[800px] h-[140px] p-4">
+            {contributions.weeks.map((week, weekIndex) => (
+              <div key={weekIndex} className="grid grid-rows-7 gap-[3px]">
+                {week.contributionDays.map((day, dayIndex) => (
+                  <div
+                    key={`${weekIndex}-${dayIndex}`}
+                    className={`w-[12px] h-[12px] rounded-sm ${getContributionColor(day.contributionCount)}`}
+                    title={`${day.contributionCount} contributions on ${new Date(day.date).toLocaleDateString()}`}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+      <style jsx global>{`
+        /* Webkit browsers like Chrome, Safari */
+        .scrollbar-thin::-webkit-scrollbar {
+          height: 4px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+          background: #404040;
+          border-radius: 2px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+          background: #525252;
+        }
+        
+        /* Firefox */
+        .scrollbar-thin {
+          scrollbar-width: thin;
+          scrollbar-color: #404040 transparent;
+        }
+      `}</style>
     </div>
   );
 };

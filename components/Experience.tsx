@@ -9,7 +9,7 @@ export function Experience() {
     {
       title: "Software Developer Intern ",
       company: "Kidjig Pvt Ltd",
-      period: "September 2023 - Present",
+      period: "September 2024 - Present",
       logo: kidjigLogo,
       responsibilities: [
         "Develop and maintain ReactJS / NextJS stack using TypeScript and JS",
@@ -27,20 +27,20 @@ export function Experience() {
   ];
 
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-[#1a1a1a] p-8">
+    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-[#1a1a1a] p-4 sm:p-6 md:p-8">
       <div className="w-full">
-        <h2 className="mb-8 text-2xl font-mono text-neutral-200">Experience</h2>
+        <h2 className="mb-4 sm:mb-8 text-xl sm:text-2xl font-mono text-neutral-200">Experience</h2>
         
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-neutral-600" />
+          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 sm:-translate-x-1/2 bg-neutral-600" />
           
           {/* Timeline Content */}
           <div className="relative">
             {experiences.map((exp, index) => (
-              <div key={index} className="relative mb-16 flex w-full items-center justify-center pt-8">
+              <div key={index} className="relative mb-8 sm:mb-16 flex w-full items-start pt-8">
                 {/* Company Logo */}
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-full bg-gray-800 p-2">
+                <div className="absolute left-4 sm:left-1/2 top-0 -translate-x-1/2 rounded-full bg-gray-800 p-2 z-10">
                   <Image
                     src={exp.logo}
                     alt={`${exp.company} logo`}
@@ -49,26 +49,22 @@ export function Experience() {
                     className="rounded-full object-cover"
                   />
                 </div>
-                
-                {/* Content */}
-                <div className="grid w-full grid-cols-[1fr,1fr] gap-8 pt-4">
-                  {/* Date on the left */}
-                  <div className="text-right">
-                    <span className="text-sm text-neutral-500">{exp.period}</span>
-                  </div>
-                  
-                  {/* Experience details on the right */}
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-semibold text-neutral-200">{exp.title}</h3>
-                    <p className="text-neutral-400">{exp.company}</p>
-                    <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-neutral-300">
-                      {exp.responsibilities.map((resp, idx) => (
-                        <li key={idx} className="leading-relaxed">
-                          {resp}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+
+                {/* Period - Left Side on Large Screens */}
+                <div className="hidden sm:block absolute right-[calc(50%+1rem)] top-8 text-right w-[45%]">
+                  <p className="text-sm text-neutral-500 space-y-1">{exp.period}</p>
+                </div>
+
+                {/* Content Container */}
+                <div className="ml-12 sm:ml-[calc(50%+2rem)] w-full max-w-[calc(100%-4rem)] sm:max-w-[45%]">
+                  <h3 className="text-lg sm:text-xl font-semibold text-neutral-200">{exp.title}</h3>
+                  <p className="text-sm sm:text-base text-neutral-400">{exp.company}</p>
+                  <p className="text-sm text-neutral-500 mb-2 sm:hidden">{exp.period}</p>
+                  <ul className="list-disc pl-4 text-sm sm:text-base text-neutral-300 space-y-1">
+                    {exp.responsibilities.map((resp, i) => (
+                      <li key={i}>{resp}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}

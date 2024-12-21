@@ -36,16 +36,16 @@ export const LayoutGrid = ({ cards }: LayoutGridProps) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative">
+    <div className="w-full h-full p-4 sm:p-6 md:p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative">
       {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "")}>
+        <div key={i} className={cn(card.className, "min-h-[350px] sm:min-h-[300px] relative")}>
           <motion.div
             onClick={() => handleClick(card.id)}
             className={cn(
               card.className,
-              "relative overflow-hidden",
+              "relative overflow-hidden h-full",
               selected === card.id
-                ? "rounded-lg cursor-pointer absolute inset-0 h-[80vh] w-full md:w-[80vw] m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-lg cursor-pointer fixed inset-0 h-[90vh] sm:h-[80vh] w-[95vw] sm:w-[90vw] md:w-[80vw] m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected === card.id
                 ? "z-40 bg-white rounded-xl h-full w-full"
                 : "bg-white rounded-xl h-full w-full"
