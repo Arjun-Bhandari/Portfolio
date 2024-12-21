@@ -28,8 +28,8 @@ export function Experience() {
 
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-[#1a1a1a] p-4 sm:p-6 md:p-8">
-      <div className="w-full">
-        <h2 className="mb-4 sm:mb-8 text-xl sm:text-2xl font-mono text-neutral-200">Experience</h2>
+      <div className="w-full  sm:mt-12 md:mt-20">
+        <h2 className="mb-4 sm:mb-0 text-xl sm:text-2xl font-mono text-neutral-200">Experience</h2>
         
         <div className="relative">
           {/* Vertical Line */}

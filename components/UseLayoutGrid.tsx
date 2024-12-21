@@ -2,7 +2,7 @@
 import React from "react";
 import { LayoutGrid } from "./ui/layout-grid";
 import { UseIconCloud } from "./UseIconCloud";
-import { Maximize2 } from "lucide-react";
+import { Maximize2, X } from "lucide-react";
 import { DownloadIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -28,6 +28,11 @@ export function LayoutGridDemo() {
 const AboutSection = () => {
   return (
     <div className="absolute inset-0 flex h-full w-full flex-col items-center justify-center bg-[#1a1a1a] p-4 sm:p-6 md:p-8">
+      {/* X icon */}
+      <div className="absolute top-4 right-4">
+        <X className="w-5 h-5 text-neutral-500 cursor-pointer hover:text-neutral-400" />
+      </div>
+
       <div className="max-w-2xl text-start">
         <p className="font-bold text-lg sm:text-xl md:text-2xl text-white font-mono">
           Introduction
@@ -93,36 +98,28 @@ const SkillsSection = () => {
 
 const ProjectsSection = () => {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center space-y-4 sm:space-y-6 p-4 sm:p-6 md:p-8">
+    <div className="absolute inset-0 flex h-full w-full flex-col items-center justify-center bg-[#1a1a1a] p-4 sm:p-6 md:p-8">
+      {/* X icon */}
+      <div className="absolute top-4 right-4">
+        <X className="w-5 h-5 text-neutral-500 cursor-pointer hover:text-neutral-400" />
+      </div>
+
       <div className="max-w-2xl text-center">
         <p className="font-bold text-xl sm:text-2xl md:text-4xl text-white">Projects</p>
+        <p className="text-sm text-neutral-400 mt-2">🚧 Section Under Development 🚧</p>
         <div className="font-normal text-sm sm:text-base my-2 sm:my-4 text-neutral-300">
           <div className="space-y-2 sm:space-y-3">
             <div>
-              <h3 className="font-semibold text-base sm:text-lg">Portfolio Website</h3>
-              <p className="text-sm sm:text-base">A modern portfolio built with Next.js and Tailwind CSS</p>
+              <h3 className="font-semibold text-base sm:text-lg">Coming Soon</h3>
+              <p className="text-sm sm:text-base text-neutral-400">Exciting projects are being crafted</p>
             </div>
             <div>
-              <h3 className="font-semibold text-base sm:text-lg">E-commerce Platform</h3>
-              <p className="text-sm sm:text-base">Full-stack e-commerce solution with React and Node.js</p>
+              <h3 className="font-semibold text-base sm:text-lg">Stay Tuned</h3>
+              <p className="text-sm sm:text-base text-neutral-400">More projects will be showcased here</p>
             </div>
           </div>
         </div>
       </div>
-      <Button
-        variant="outline"
-        size="sm"
-        asChild
-        className="bg-blue-50 hover:bg-blue-50/45"
-      >
-        <a
-          href="https://drive.google.com/file/d/1IaiOyqgPTU1fXcHCCqU3FrkE82vtkayi/view?usp=sharing"
-          download
-        >
-          <DownloadIcon className="mr-2 h-4 w-4" />
-          Download CV
-        </a>
-      </Button>
     </div>
   );
 };
@@ -235,9 +232,8 @@ const cards = [
         <div className="flex h-full w-full items-center justify-center p-6">
           <div className="text-center">
             <p className="text-xl font-bold text-white">Projects</p>
-            <p className="mt-2 text-sm text-neutral-300">
-              Click to view my projects
-            </p>
+            <p className="mt-2 text-sm text-neutral-400">🚧 Under Development 🚧</p>
+            <p className="mt-1 text-xs text-neutral-500">Click to view progress</p>
           </div>
         </div>
       </div>

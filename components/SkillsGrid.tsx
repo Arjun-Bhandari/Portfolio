@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Bot } from "lucide-react";
+import { Bot, X } from "lucide-react";
 
 interface TechItem {
   name: string;
@@ -256,12 +256,13 @@ const skillsData: SkillCategory[] = [
 
 export const SkillsGrid = () => {
   return (
-    <div className="w-full space-y-4 px-4 sm:px-6 md:px-8">
-      <div className="mb-4">
+    <div className="w-full px-4 sm:px-6 md:px-8 overflow-y-auto max-h-[calc(100vh-2rem)] pb-4">
+      <div className="sticky top-0 pt-8 pb-2 bg-[#1a1a1a] z-10 flex items-center justify-between">
         <p className="text-xl font-bold text-white font-mono">Essential Tools I used</p>
+        <X className="w-5 h-5 text-neutral-500 cursor-pointer hover:text-neutral-400" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[900px] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[900px] mx-auto mt-4">
         {skillsData.map((category, idx) => (
           <div
             key={category.title}
@@ -288,12 +289,12 @@ export const SkillsGrid = () => {
                 {category.items.map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-center gap-1.5 p-2 sm:p-1.5 rounded-lg bg-neutral-800/30 hover:bg-neutral-800/50 transition-colors backdrop-blur-sm"
+                    className="flex items-center gap-1.5 p-1.5 rounded-lg bg-neutral-800/30 hover:bg-neutral-800/50 transition-colors backdrop-blur-sm"
                   >
-                    <div className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex items-center justify-center">
+                    <div className="w-3.5 h-3.5 flex items-center justify-center">
                       {item.icon}
                     </div>
-                    <span className="text-[11px] sm:text-xs text-neutral-300 truncate font-mono">{item.name}</span>
+                    <span className="text-[11px] text-neutral-300 truncate font-mono">{item.name}</span>
                   </div>
                 ))}
               </div>
