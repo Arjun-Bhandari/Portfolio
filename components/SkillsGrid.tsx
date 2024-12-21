@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Bot, X } from "lucide-react";
 
 interface TechItem {
@@ -20,41 +21,57 @@ const skillsData: SkillCategory[] = [
       {
         name: "React",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-            className="w-6 h-6"
-            alt="React"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+              alt="React"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "Redux",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
-            className="w-6 h-6"
-            alt="Redux"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
+              alt="Redux"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "CSS",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
-            className="w-6 h-6"
-            alt="CSS"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+              alt="CSS"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "TailwindCSS",
         icon: (
-          <img
-            src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
-            className="w-6 h-6"
-            alt="TailwindCSS"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+              alt="TailwindCSS"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
@@ -68,11 +85,15 @@ const skillsData: SkillCategory[] = [
       {
         name: "MUI",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg"
-            className="w-6 h-6"
-            alt="MUI"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg"
+              alt="MUI"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
     ],
@@ -84,61 +105,85 @@ const skillsData: SkillCategory[] = [
       {
         name: "Node.JS",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-            className="w-6 h-6"
-            alt="NodeJS"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+              alt="NodeJS"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "ExpressJS",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
-            className="w-6 h-6"
-            alt="ExpressJS"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+              alt="ExpressJS"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "MongoDB",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
-            className="w-6 h-6"
-            alt="MongoDB"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+              alt="MongoDB"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "Firebase",
         icon: (
-          <img
-            src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
-            className="w-6 h-6"
-            alt="Firebase"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
+              alt="Firebase"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "Appwrite",
         icon: (
-          <img
-            src="https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg"
-            className="w-6 h-6"
-            alt="Appwrite"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg"
+              alt="Appwrite"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "FastAPI",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/simple-icons/simple-icons/master/icons/fastapi.svg"
-            className="w-6 h-6"
-            alt="FastAPI"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/simple-icons/simple-icons/master/icons/fastapi.svg"
+              alt="FastAPI"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
     ],
@@ -150,41 +195,57 @@ const skillsData: SkillCategory[] = [
       {
         name: "Python",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-            className="w-6 h-6"
-            alt="Python"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+              alt="Python"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "TypeScript",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-            className="w-6 h-6"
-            alt="TypeScript"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+              alt="TypeScript"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "JavaScript",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-            className="w-6 h-6"
-            alt="JavaScript"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "C/C++",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
-            className="w-6 h-6"
-            alt="C++"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
+              alt="C++"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
     ],
@@ -196,51 +257,71 @@ const skillsData: SkillCategory[] = [
       {
         name: "Windows",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg"
-            className="w-6 h-6"
-            alt="Windows"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg"
+              alt="Windows"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "Docker",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
-            className="w-6 h-6"
-            alt="Docker"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+              alt="Docker"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "Linux",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
-            className="w-6 h-6"
-            alt="Linux"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
+              alt="Linux"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "Git",
         icon: (
-          <img
-            src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
-            className="w-6 h-6"
-            alt="Git"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
+              alt="Git"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {
         name: "GitHub",
         icon: (
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"
-            className="w-6 h-6"
-            alt="GitHub"
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"
+              alt="GitHub"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         ),
       },
       {

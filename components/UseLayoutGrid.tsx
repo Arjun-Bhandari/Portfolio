@@ -38,18 +38,18 @@ const AboutSection = () => {
           Introduction
         </p>
         <p className="font-mono text-sm sm:text-base my-2 sm:my-4 text-neutral-300">
-          👋 Hi, I'm Arjun Bhandari, a 3rd-semester B.Tech Computer Science
+          👋 Hi, I&apos;m Arjun Bhandari, a 3rd-semester B.Tech Computer Science
           student with a passion for building innovative tech solutions. From
           AI-driven projects to empowering communities through mentorship, I thrive on combining creativity and technology to solve
-          real-world problems. Whether it's leading tech events or working on
-          hands-on projects, I'm all about learning, growing, and making an
-          impact. Let's shape the future together!
+          real-world problems. Whether it&apos;s leading tech events or working on
+          hands-on projects, I&apos;m all about learning, growing, and making an
+          impact. Let&apos;s shape the future together!
         </p>
         
         <div className="mt-4 sm:mt-8 font-mono text-neutral-300">
           <p className="mb-1">Best Regards,</p>
           <p className="mb-2 sm:mb-4">Arjun Bhandari</p>
-          <p className="text-xs sm:text-sm mb-2 sm:mb-4">Let's Connect</p>
+          <p className="text-xs sm:text-sm mb-2 sm:mb-4">Let&apos;s Connect</p>
           <p className="text-xs sm:text-sm text-neutral-400 flex items-center gap-2">
             Scroll down for socials
             <svg 
