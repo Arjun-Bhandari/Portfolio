@@ -117,12 +117,17 @@ body {
   --sidebar-border:oklch(1 0 0 / 10%);
   --sidebar-ring:oklch(0.556 0 0);
 }
-
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.2s, color 0.2s;
   }
 }
