@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {  Hero, Navbar,Exprience } from "@/src/components/index";
+import {  Hero, Navbar,Exprience,Projects } from "@/src/components/index";
 
 
 export default function Home() {
@@ -7,7 +7,8 @@ export default function Home() {
 <>
       <Navbar />
       <Hero/>
-      {/* <Exprience/> */}
+      <Exprience/>
+<Projects/>
      
    </>
   );
